@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dftifsc-cnea.github.io/sitemap.xml
