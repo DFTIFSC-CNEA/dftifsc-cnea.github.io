@@ -36,3 +36,33 @@ document.querySelectorAll('button.mail').forEach(b => b.addEventListener('click'
   const m = atob(b.dataset.a).split('').reverse().join(''), a = document.createElement('a');
   a.href = 'mailto:' + m; a.textContent = m; b.replaceWith(a);
 }));
+
+// carrusel de figuras: orden aleatorio, 5 s, pausa al pasar el mouse, flechas y deslizamiento
+document.querySelectorAll('.car').forEach(car => {
+  const D = JSON.parse(car.querySelector('.car-data').textContent);
+  for (let i = D.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [D[i], D[j]] = [D[j], D[i]]; }
+  const a = car.querySelector('.car-stage'), img = a.querySelector('img'), t = car.querySelector('.car-t'),
+        c = car.querySelector('.car-c'), dots = car.querySelector('.car-dots');
+  const nd = Math.min(D.length, 24);
+  dots.innerHTML = '<i></i>'.repeat(nd);
+  let k = 0, timer = null, hover = false;
+  function show(i) {
+    k = (i + D.length) % D.length; const d = D[k];
+    img.classList.add('fade');
+    const pre = new Image(); pre.onload = pre.onerror = () => { img.src = d.img; img.alt = d.t; img.classList.remove('fade'); };
+    pre.src = d.img;
+    a.href = d.u; t.textContent = d.t; c.textContent = d.c;
+    [...dots.children].forEach((x, j) => x.classList.toggle('on', j === k % nd));
+    const nx = new Image(); nx.src = D[(k + 1) % D.length].img;
+  }
+  const go = () => { clearInterval(timer); if (!hover && !document.hidden) timer = setInterval(() => show(k + 1), 5000); };
+  car.querySelectorAll('.car-b').forEach(b => b.addEventListener('click', () => { show(k + +b.dataset.d); go(); }));
+  car.addEventListener('mouseenter', () => { hover = true; go(); });
+  car.addEventListener('mouseleave', () => { hover = false; go(); });
+  document.addEventListener('visibilitychange', go);
+  let x0 = null;
+  a.addEventListener('touchstart', e => x0 = e.touches[0].clientX, {passive: true});
+  a.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) { e.preventDefault(); show(k + (dx < 0 ? 1 : -1)); go(); } x0 = null; });
+  show(0); go();
+});
