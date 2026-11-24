@@ -237,7 +237,8 @@ footer a{color:var(--accent)}
 .tcnea{margin-right:auto;padding:2px 3px}
 .tcnea img{height:48px;width:auto;display:block}
 @media (max-width:600px){.tcnea img{height:34px}}
-.inst.conicet{padding:2px 4px;vertical-align:middle;margin-left:.35rem;border:1px solid var(--line)}
-.inst.conicet img{width:44px}
+.ilogos{display:inline-flex;gap:.3rem;vertical-align:middle;margin-left:.35rem}
+.ilogo{padding:2px 4px;border:1px solid var(--line);height:30px;box-sizing:border-box}
+.ilogo img{height:24px!important;width:auto}
 .teach{color:var(--muted);font-size:.88rem!important}
 .teach a{color:var(--accent)}
