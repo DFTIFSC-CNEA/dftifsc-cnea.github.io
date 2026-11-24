@@ -66,3 +66,13 @@ document.querySelectorAll('.car').forEach(car => {
     if (Math.abs(dx) > 40) { e.preventDefault(); show(k + (dx < 0 ? 1 : -1)); go(); } x0 = null; });
   show(0); go();
 });
+
+// modo claro/oscuro: sigue al sistema; el botón lo fija y se recuerda en este navegador
+document.querySelectorAll('button.theme').forEach(b => b.addEventListener('click', () => {
+  const r = document.documentElement, cur = r.dataset.theme ||
+    (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const nx = cur === 'dark' ? 'light' : 'dark';
+  const sys = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  r.dataset.theme = nx;
+  try { nx === sys ? localStorage.removeItem('theme') : localStorage.setItem('theme', nx); } catch (e) {}
+}));
