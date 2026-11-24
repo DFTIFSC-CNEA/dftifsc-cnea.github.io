@@ -242,3 +242,5 @@ footer a{color:var(--accent)}
 .ilogo img{height:24px!important;width:auto}
 .teach{color:var(--muted);font-size:.88rem!important}
 .teach a{color:var(--accent)}
+.clk{font-size:.72rem;font-weight:600;margin-left:.35rem;text-decoration:none;color:var(--accent)}
+.clk:hover{text-decoration:underline}
