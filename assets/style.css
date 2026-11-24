@@ -34,7 +34,7 @@ h2.h::before{content:"";width:28px;height:3px;background:var(--gold);border-radi
 .top{background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);
   -webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
 .top .wrap{display:flex;align-items:center;gap:1rem;min-height:66px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:.9rem;text-decoration:none;color:var(--text);margin-right:auto}
+.brand{display:flex;align-items:center;gap:.9rem;text-decoration:none;color:var(--text)}
 .brand img{height:40px;width:auto;display:block}
 .bn{font-size:.88rem;color:var(--muted);line-height:1.2;max-width:20ch}
 nav{display:flex;gap:1.4rem;flex-wrap:wrap;align-items:center}
@@ -234,11 +234,9 @@ footer a{color:var(--accent)}
 .flogos{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap}
 .flogos .inst{padding:4px}
 .flogos .inst img{width:56px}
-.hinst{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}
-.hinst .eyebrow{margin:0}
-.hcnea{padding:4px;box-shadow:0 2px 8px rgba(0,0,0,.12)}
-.hcnea img{width:52px}
-@media (max-width:600px){.hcnea img{width:42px}}
+.tcnea{margin-right:auto;padding:2px 3px}
+.tcnea img{height:48px;width:auto;display:block}
+@media (max-width:600px){.tcnea img{height:34px}}
 .inst.conicet{padding:2px 4px;vertical-align:middle;margin-left:.35rem;border:1px solid var(--line)}
 .inst.conicet img{width:44px}
 .teach{color:var(--muted);font-size:.88rem!important}
