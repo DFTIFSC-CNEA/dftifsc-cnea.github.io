@@ -11,7 +11,12 @@ if (list) {
   const items = [...list.querySelectorAll('li')].map(li => ({li, txt: li.textContent.toLowerCase(),
     m: li.dataset.m.split(' '), g: li.dataset.g.split(' '), k: li.dataset.k}));
   const sp = new URLSearchParams(location.search);
-  if (sp.get('m')) m.value = sp.get('m');
+  if (sp.get('m')) {
+    // ex-miembros: no están en la lista; se agrega su opción solo si se llega desde su ficha
+    const x = JSON.parse(m.dataset.extra || '{}')[sp.get('m')];
+    if (x && !m.querySelector(`option[value="${sp.get('m')}"]`)) m.add(new Option(x, sp.get('m')));
+    m.value = sp.get('m');
+  }
   if (sp.get('g')) g.value = sp.get('g');
   if (sp.get('q')) q.value = sp.get('q');
   function apply() {
