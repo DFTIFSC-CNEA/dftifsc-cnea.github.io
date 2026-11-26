@@ -78,7 +78,7 @@ nav a.lang{color:var(--accent);font-weight:600;border:1px solid var(--line);bord
 @media (max-width:600px){.car-stage{height:240px}.hero{padding:2.2rem 0}}
 
 /* miembros en portada */
-.minis{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1.2rem .8rem;margin-top:1rem}
+.minis{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1.2rem .8rem;margin-top:1rem}
 .mini{display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:var(--text);padding:.6rem .3rem;border-radius:12px;transition:background .15s}
 .mini:hover{background:var(--accent-soft)}
 .mini .av{width:84px;height:84px;margin-bottom:.5rem;transition:transform .2s}
@@ -244,3 +244,51 @@ footer a{color:var(--accent)}
 .teach a{color:var(--accent)}
 .clk{font-size:.72rem;font-weight:600;margin-left:.35rem;text-decoration:none;color:var(--accent)}
 .clk:hover{text-decoration:underline}
+
+/* historia */
+.hist{max-width:820px;padding-bottom:3rem}
+.hist p,.hist li,.hist dd{text-wrap:pretty}
+.hist h2{margin-top:3rem}
+.hist h3{font-size:1.25rem;margin:2rem 0 .6rem}
+.hist h4{font-family:var(--serif);font-size:1.05rem;margin:1.5rem 0 .4rem;color:var(--accent)}
+.hist a.pn{text-decoration:none;color:inherit;border-bottom:1px dotted var(--accent)}
+.hist a.pn:hover{color:var(--accent)}
+.hsum{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:1.1rem 1.4rem;margin:2rem 0 1.5rem;box-shadow:var(--shadow)}
+.hsum p{margin:.5rem 0}
+.credit{color:var(--muted);font-size:.95rem;border-top:1px solid var(--line);padding-top:1rem}
+.tl{list-style:none;padding:0;margin:1.5rem 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.6rem}
+.tl li{background:var(--accent-soft);border-radius:8px;padding:.55rem .75rem;font-size:.9rem;line-height:1.35}
+.tl span{display:block;font-family:var(--serif);font-weight:700;font-size:1.1rem;color:var(--accent)}
+.hfig{margin:2rem auto;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px;box-shadow:var(--shadow);max-width:640px}
+.hfig.wide{max-width:none}
+.hfig.narrow{max-width:360px}
+.hfig img{display:block;width:100%;height:auto;border-radius:4px}
+.hfig figcaption,.org figcaption{font-size:.9rem;color:var(--muted);margin-top:.6rem;line-height:1.45}
+.org{margin:2rem 0;text-align:center}
+.org-top{display:inline-block;background:var(--night-2);color:var(--on-night);border-radius:8px;padding:.6rem 1.2rem;font-weight:700;position:relative}
+.org small{display:block;font-weight:400;font-size:.8rem;opacity:.85;margin-top:.15rem}
+.org{--ln:color-mix(in srgb,var(--muted) 45%,transparent)}
+.org-kids{display:flex;gap:.8rem;margin-top:46px;position:relative}
+.org-top::after{content:"";position:absolute;left:50%;top:100%;height:28px;border-left:2px solid var(--ln)}
+.org-kids>div{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:.6rem .7rem;font-weight:600;font-size:.92rem;position:relative;box-shadow:var(--shadow)}
+.org-kids>div::before{content:"";position:absolute;left:50%;bottom:100%;height:18px;border-left:2px solid var(--ln)}
+.org-kids>div::after{content:"";position:absolute;top:-20px;left:calc(-.4rem - 1px);right:calc(-.4rem - 1px);border-top:2px solid var(--ln)}
+.org-kids>div:first-child::after{left:50%}.org-kids>div:last-child::after{right:50%}
+.org-kids small{color:var(--muted);opacity:1}
+.org-kids .us{border:2px solid var(--gold);background:var(--gold-soft)}
+.org-kids .gone{border-style:dashed;opacity:.8}
+@media (max-width:640px){.org-kids{flex-direction:column;margin-top:28px}.org-kids>div::before,.org-kids>div::after{display:none}}
+.tscroll{overflow-x:auto;margin:1rem 0}
+.theses{border-collapse:collapse;font-size:.88rem;width:100%;min-width:620px}
+.theses th{text-align:left;font-family:var(--sans);border-bottom:2px solid var(--line);padding:.4rem .5rem}
+.theses td{border-bottom:1px solid var(--line);padding:.45rem .5rem;vertical-align:top}
+.theses td:nth-child(2){white-space:nowrap}
+.theses tr.stay{background:var(--gold-soft)}
+.today dt{margin-top:1rem;font-weight:700}
+.today dd{margin:.2rem 0 0 0}
+.fn a{text-decoration:none;font-size:.75em;padding:0 1px}
+.notes{font-size:.88rem;color:var(--muted)}
+.notes li{margin:.3rem 0}
+.notes li:target{background:var(--gold-soft)}
+.hist h2.nh{font-size:1.2rem}
+.hist sup{line-height:0}
