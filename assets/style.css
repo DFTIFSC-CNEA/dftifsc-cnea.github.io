@@ -292,3 +292,4 @@ footer a{color:var(--accent)}
 .notes li:target{background:var(--gold-soft)}
 .hist h2.nh{font-size:1.2rem}
 .hist sup{line-height:0}
+.person .thesis{font-size:.85rem;color:var(--muted);margin:.25rem 0 0;line-height:1.35}
