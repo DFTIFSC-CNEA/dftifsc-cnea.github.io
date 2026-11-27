@@ -299,3 +299,13 @@ footer a{color:var(--accent)}
 .people.compact h3{font-size:.98rem}
 .people.compact p{font-size:.82rem;margin:.15rem 0}
 .people.compact .lk{font-size:.8rem}
+
+/* foto grupal con nombres */
+.gphoto{position:relative;margin:0 0 1.5rem;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.gphoto img{display:block;width:100%;height:auto}
+.gtag{position:absolute;border-radius:50%;outline:none}
+.gtag span{position:absolute;left:50%;top:100%;transform:translate(-50%,4px);white-space:nowrap;background:var(--night);color:var(--on-night);
+  font-size:.85rem;font-weight:600;padding:.2rem .55rem;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .15s;z-index:2}
+.gtag:hover span,.gtag:focus span{opacity:1}
+.gtag:hover,.gtag:focus{box-shadow:0 0 0 3px rgba(255,255,255,.85)}
+@media (hover:none){.gtag span{font-size:.75rem}}
